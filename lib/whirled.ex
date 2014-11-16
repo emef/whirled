@@ -1,2 +1,0 @@
-defmodule Whirled do
-end
