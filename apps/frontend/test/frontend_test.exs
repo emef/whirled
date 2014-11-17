@@ -1,4 +1,4 @@
-defmodule BuildingsTest do
+defmodule FrontendTest do
   use ExUnit.Case
 
   test "the truth" do

@@ -1,8 +1,8 @@
-defmodule Buildings.Mixfile do
+defmodule Core.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :buildings,
+    [app: :core,
      version: "0.0.1",
      deps_path: "../../deps",
      lockfile: "../../mix.lock",
@@ -15,7 +15,7 @@ defmodule Buildings.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [applications: [:logger],
-     mod: {Buildings, []}]
+     mod: {Core, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -32,6 +32,6 @@ defmodule Buildings.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [{:json,   "~> 0.3.0"}]
   end
 end

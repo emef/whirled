@@ -1,1 +1,6 @@
-%{"uuid": {:hex, :uuid, "0.1.5"}}
+%{"cowboy": {:hex, :cowboy, "1.0.0"},
+  "cowlib": {:hex, :cowlib, "1.0.0"},
+  "json": {:hex, :json, "0.3.2"},
+  "plug": {:hex, :plug, "0.8.2"},
+  "ranch": {:hex, :ranch, "1.0.0"},
+  "uuid": {:hex, :uuid, "0.1.5"}}
