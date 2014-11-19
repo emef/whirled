@@ -4,9 +4,9 @@ defmodule Frontend.Mixfile do
   def project do
     [app: :frontend,
      version: "0.0.1",
-     deps_path: "../../deps",
-     lockfile: "../../mix.lock",
      elixir: "~> 1.0",
+     elixirc_paths: ["lib", "web"],
+     compilers: [:phoenix] ++ Mix.compilers,
      deps: deps]
   end
 
@@ -14,27 +14,16 @@ defmodule Frontend.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :cowboy, :plug, :core],
-     mod: {Frontend, []}]
+    [mod: {Frontend, []},
+     applications: [:phoenix, :cowboy, :logger, :core]]
   end
 
-  # Dependencies can be Hex packages:
+  # Specifies your project dependencies
   #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # To depend on another app inside the umbrella:
-  #
-  #   {:myapp, in_umbrella: true}
-  #
-  # Type `mix help deps` for more examples and options
+  # Type `mix help deps` for examples and options
   defp deps do
-    [{:core, in_umbrella: true},
-     {:cowboy, "~> 1.0.0"},
-     {:plug, "~> 0.8.0"},
-     {:json,   "~> 0.3.0"}]
+    [{:phoenix, "0.5.0"},
+     {:cowboy, "~> 1.0"},
+     {:core, in_umbrella: true}]
   end
 end

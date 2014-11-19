@@ -54,10 +54,8 @@ defmodule Core.GameServer do
       nil -> load_or_create(game_id, state)
       pid ->
         if Process.alive?(pid) do
-          IO.puts "alive process"
           {pid, state}
         else
-          IO.puts "dead process"
           load_or_create(game_id, state)
         end
     end

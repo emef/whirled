@@ -1,10 +1,6 @@
 defmodule Core.Game do
   use GenServer
 
-  defmodule State do
-    defstruct [:game_id, :world, :characters]
-  end
-
   def start_link(game_id, opts \\ []) do
     GenServer.start_link(__MODULE__, game_id, opts)
   end
@@ -52,8 +48,8 @@ defmodule Core.Game do
 
   defp random_state(game_id) do
     world = Core.World.random
-    characters = 1..5 |> Enum.map(fn(i) -> Core.Char.random(i, world) end)
-    %State{game_id: game_id, world: world, characters: characters}
+    characters = 1..100 |> Enum.map(fn(i) -> Core.Char.random(i, world) end)
+    %{game_id: game_id, world: world, characters: characters}
   end
 
 end
